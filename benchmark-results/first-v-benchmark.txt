@@ -1,0 +1,73 @@
+Benchmark                                            Mode     Cnt      Score     Error   Units
+TreeOperationsBenchmark.btreeContains               thrpt      20  12098,370 ± 236,269  ops/ms
+TreeOperationsBenchmark.btreeDelete                 thrpt      20  13924,616 ± 167,336  ops/ms
+TreeOperationsBenchmark.btreeInsert                 thrpt      20   2158,592 ±  97,534  ops/ms
+TreeOperationsBenchmark.crdtBtreeContains           thrpt      20  15406,154 ±  83,996  ops/ms
+TreeOperationsBenchmark.crdtBtreeDelete             thrpt      20   3128,882 ±  42,765  ops/ms
+TreeOperationsBenchmark.crdtBtreeInsert             thrpt      20    792,352 ±   6,221  ops/ms
+TreeOperationsBenchmark.btreeContains                avgt      20     ≈ 10⁻⁴             ms/op
+TreeOperationsBenchmark.btreeDelete                  avgt      20     ≈ 10⁻⁴             ms/op
+TreeOperationsBenchmark.btreeInsert                  avgt      20     ≈ 10⁻³             ms/op
+TreeOperationsBenchmark.crdtBtreeContains            avgt      20     ≈ 10⁻⁴             ms/op
+TreeOperationsBenchmark.crdtBtreeDelete              avgt      20     ≈ 10⁻⁴             ms/op
+TreeOperationsBenchmark.crdtBtreeInsert              avgt      20      0,001 ±   0,001   ms/op
+TreeOperationsBenchmark.btreeContains              sample  439719     ≈ 10⁻⁴             ms/op
+TreeOperationsBenchmark.btreeContains:p0.00        sample                ≈ 0             ms/op
+TreeOperationsBenchmark.btreeContains:p0.50        sample             ≈ 10⁻⁴             ms/op
+TreeOperationsBenchmark.btreeContains:p0.90        sample             ≈ 10⁻⁴             ms/op
+TreeOperationsBenchmark.btreeContains:p0.95        sample             ≈ 10⁻⁴             ms/op
+TreeOperationsBenchmark.btreeContains:p0.99        sample             ≈ 10⁻⁴             ms/op
+TreeOperationsBenchmark.btreeContains:p0.999       sample              0,004             ms/op
+TreeOperationsBenchmark.btreeContains:p0.9999      sample              0,015             ms/op
+TreeOperationsBenchmark.btreeContains:p1.00        sample              0,057             ms/op
+TreeOperationsBenchmark.btreeDelete                sample  519754     ≈ 10⁻⁴             ms/op
+TreeOperationsBenchmark.btreeDelete:p0.00          sample                ≈ 0             ms/op
+TreeOperationsBenchmark.btreeDelete:p0.50          sample             ≈ 10⁻⁴             ms/op
+TreeOperationsBenchmark.btreeDelete:p0.90          sample             ≈ 10⁻⁴             ms/op
+TreeOperationsBenchmark.btreeDelete:p0.95          sample             ≈ 10⁻⁴             ms/op
+TreeOperationsBenchmark.btreeDelete:p0.99          sample             ≈ 10⁻⁴             ms/op
+TreeOperationsBenchmark.btreeDelete:p0.999         sample              0,004             ms/op
+TreeOperationsBenchmark.btreeDelete:p0.9999        sample              0,013             ms/op
+TreeOperationsBenchmark.btreeDelete:p1.00          sample              0,092             ms/op
+TreeOperationsBenchmark.btreeInsert                sample  664758      0,001 ±   0,001   ms/op
+TreeOperationsBenchmark.btreeInsert:p0.00          sample             ≈ 10⁻⁴             ms/op
+TreeOperationsBenchmark.btreeInsert:p0.50          sample             ≈ 10⁻³             ms/op
+TreeOperationsBenchmark.btreeInsert:p0.90          sample              0,001             ms/op
+TreeOperationsBenchmark.btreeInsert:p0.95          sample              0,001             ms/op
+TreeOperationsBenchmark.btreeInsert:p0.99          sample              0,001             ms/op
+TreeOperationsBenchmark.btreeInsert:p0.999         sample              0,009             ms/op
+TreeOperationsBenchmark.btreeInsert:p0.9999        sample              0,021             ms/op
+TreeOperationsBenchmark.btreeInsert:p1.00          sample              0,093             ms/op
+TreeOperationsBenchmark.crdtBtreeContains          sample  575302     ≈ 10⁻⁴             ms/op
+TreeOperationsBenchmark.crdtBtreeContains:p0.00    sample                ≈ 0             ms/op
+TreeOperationsBenchmark.crdtBtreeContains:p0.50    sample             ≈ 10⁻⁴             ms/op
+TreeOperationsBenchmark.crdtBtreeContains:p0.90    sample             ≈ 10⁻⁴             ms/op
+TreeOperationsBenchmark.crdtBtreeContains:p0.95    sample             ≈ 10⁻⁴             ms/op
+TreeOperationsBenchmark.crdtBtreeContains:p0.99    sample             ≈ 10⁻⁴             ms/op
+TreeOperationsBenchmark.crdtBtreeContains:p0.999   sample              0,001             ms/op
+TreeOperationsBenchmark.crdtBtreeContains:p0.9999  sample              0,012             ms/op
+TreeOperationsBenchmark.crdtBtreeContains:p1.00    sample              0,038             ms/op
+TreeOperationsBenchmark.crdtBtreeDelete            sample  488059     ≈ 10⁻³             ms/op
+TreeOperationsBenchmark.crdtBtreeDelete:p0.00      sample                ≈ 0             ms/op
+TreeOperationsBenchmark.crdtBtreeDelete:p0.50      sample             ≈ 10⁻⁴             ms/op
+TreeOperationsBenchmark.crdtBtreeDelete:p0.90      sample             ≈ 10⁻⁴             ms/op
+TreeOperationsBenchmark.crdtBtreeDelete:p0.95      sample             ≈ 10⁻⁴             ms/op
+TreeOperationsBenchmark.crdtBtreeDelete:p0.99      sample              0,012             ms/op
+TreeOperationsBenchmark.crdtBtreeDelete:p0.999     sample              0,022             ms/op
+TreeOperationsBenchmark.crdtBtreeDelete:p0.9999    sample              0,041             ms/op
+TreeOperationsBenchmark.crdtBtreeDelete:p1.00      sample              0,732             ms/op
+TreeOperationsBenchmark.crdtBtreeInsert            sample  477599      0,001 ±   0,001   ms/op
+TreeOperationsBenchmark.crdtBtreeInsert:p0.00      sample             ≈ 10⁻⁴             ms/op
+TreeOperationsBenchmark.crdtBtreeInsert:p0.50      sample              0,001             ms/op
+TreeOperationsBenchmark.crdtBtreeInsert:p0.90      sample              0,002             ms/op
+TreeOperationsBenchmark.crdtBtreeInsert:p0.95      sample              0,002             ms/op
+TreeOperationsBenchmark.crdtBtreeInsert:p0.99      sample              0,005             ms/op
+TreeOperationsBenchmark.crdtBtreeInsert:p0.999     sample              0,014             ms/op
+TreeOperationsBenchmark.crdtBtreeInsert:p0.9999    sample              0,030             ms/op
+TreeOperationsBenchmark.crdtBtreeInsert:p1.00      sample              6,095             ms/op
+TreeOperationsBenchmark.btreeContains                  ss      20      0,005 ±   0,001   ms/op
+TreeOperationsBenchmark.btreeDelete                    ss      20      0,009 ±   0,006   ms/op
+TreeOperationsBenchmark.btreeInsert                    ss      20      0,004 ±   0,002   ms/op
+TreeOperationsBenchmark.crdtBtreeContains              ss      20      0,003 ±   0,001   ms/op
+TreeOperationsBenchmark.crdtBtreeDelete                ss      20      0,012 ±   0,004   ms/op
+TreeOperationsBenchmark.crdtBtreeInsert                ss      20      0,013 ±   0,006   ms/op

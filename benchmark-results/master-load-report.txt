@@ -1,0 +1,106 @@
+[2026-03-18 21:07:53,213] MacBook-Pro-Anastasia/INFO/locust.main: Shutting down (exit code 1)
+Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+--------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+DELETE   DELETE /api/tree/{key}                                                          3513     0(0.00%) |     23       2      88     22 |   29.50        0.00
+GET      GET /api/tree/{key}                                                             7996   109(1.36%) |     24       2     109     23 |   67.15        0.92
+GET      GET /api/tree/{key}/exists                                                      5792    40(0.69%) |     24       2      88     23 |   48.64        0.34
+POST     POST /api/tree/insert                                                           5799     0(0.00%) |     23       2      88     23 |   48.70        0.00
+--------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+         Aggregated                                                                     23100   149(0.65%) |     23       2     109     23 |  193.98        1.25
+
+Response time percentiles (approximated)
+Type     Name                                                                                  50%    66%    75%    80%    90%    95%    98%    99%  99.9% 99.99%   100% # reqs
+--------|--------------------------------------------------------------------------------|--------|------|------|------|------|------|------|------|------|------|------|------
+DELETE   DELETE /api/tree/{key}                                                                 22     28     32     33     39     47     57     62     80     89     89   3513
+GET      GET /api/tree/{key}                                                                    23     30     33     35     41     49     59     66     84    110    110   7996
+GET      GET /api/tree/{key}/exists                                                             23     29     33     35     41     48     58     63     83     88     88   5792
+POST     POST /api/tree/insert                                                                  23     29     32     34     40     47     56     61     78     88     88   5799
+--------|--------------------------------------------------------------------------------|--------|------|------|------|------|------|------|------|------|------|------|------
+         Aggregated                                                                             23     29     32     34     40     48     58     63     80     89    110  23100
+
+Error report
+# occurrences      Error
+------------------|---------------------------------------------------------------------------------------------------------------------------------------------
+17                 GET GET /api/tree/{key}/exists: Master exists mismatch. expected=False, actual=True
+1                  GET GET /api/tree/{key}: Unexpected value. expected=None, actual=value-451580
+2                  GET GET /api/tree/{key}: Unexpected value. expected={'value': 'value-798755', 'updated_at': 1773857162.508558}, actual=value-166010
+1                  GET GET /api/tree/{key}: Unexpected value. expected=None, actual=value-55719
+27                 GET GET /api/tree/{key}: Master returned 404 for expected existing key
+1                  GET GET /api/tree/{key}: Unexpected value. expected={'value': 'value-909782', 'updated_at': 1773857163.5194602}, actual=value-907786
+1                  GET GET /api/tree/{key}: Unexpected value. expected={'value': 'value-678493', 'updated_at': 1773857161.472068}, actual=value-421232
+23                 GET GET /api/tree/{key}/exists: Master exists mismatch. expected=True, actual=False
+1                  GET GET /api/tree/{key}: Unexpected value. expected=None, actual=value-883299
+1                  GET GET /api/tree/{key}: Unexpected value. expected={'value': 'value-507782', 'updated_at': 1773857165.479167}, actual=value-535983
+1                  GET GET /api/tree/{key}: Unexpected value. expected=None, actual=value-193912
+1                  GET GET /api/tree/{key}: Unexpected value. expected={'value': 'value-227143', 'updated_at': 1773857163.51806}, actual=value-109176
+1                  GET GET /api/tree/{key}: Unexpected value. expected=None, actual=value-122643
+1                  GET GET /api/tree/{key}: Unexpected value. expected={'value': 'value-58298', 'updated_at': 1773857168.478801}, actual=value-967369
+1                  GET GET /api/tree/{key}: Unexpected value. expected={'value': 'value-617005', 'updated_at': 1773857171.455096}, actual=value-885648
+1                  GET GET /api/tree/{key}: Unexpected value. expected=None, actual=value-647589
+1                  GET GET /api/tree/{key}: Unexpected value. expected={'value': 'value-951017', 'updated_at': 1773857168.4705899}, actual=value-936171
+1                  GET GET /api/tree/{key}: Unexpected value. expected={'value': 'value-529750', 'updated_at': 1773857170.5189319}, actual=value-513011
+1                  GET GET /api/tree/{key}: Unexpected value. expected=None, actual=value-432830
+1                  GET GET /api/tree/{key}: Unexpected value. expected={'value': 'value-760285', 'updated_at': 1773857175.493684}, actual=value-440595
+1                  GET GET /api/tree/{key}: Unexpected value. expected=None, actual=value-282668
+1                  GET GET /api/tree/{key}: Unexpected value. expected=None, actual=value-262350
+1                  GET GET /api/tree/{key}: Unexpected value. expected={'value': 'value-977339', 'updated_at': 1773857179.47192}, actual=value-584002
+1                  GET GET /api/tree/{key}: Unexpected value. expected={'value': 'value-228252', 'updated_at': 1773857185.47503}, actual=value-896473
+1                  GET GET /api/tree/{key}: Unexpected value. expected={'value': 'value-932717', 'updated_at': 1773857184.491822}, actual=value-987600
+1                  GET GET /api/tree/{key}: Unexpected value. expected={'value': 'value-675331', 'updated_at': 1773857177.4812732}, actual=value-339305
+1                  GET GET /api/tree/{key}: Unexpected value. expected={'value': 'value-28160', 'updated_at': 1773857185.457676}, actual=value-159020
+1                  GET GET /api/tree/{key}: Unexpected value. expected={'value': 'value-500078', 'updated_at': 1773857192.4608252}, actual=value-489350
+1                  GET GET /api/tree/{key}: Unexpected value. expected={'value': 'value-788694', 'updated_at': 1773857192.476764}, actual=value-469936
+1                  GET GET /api/tree/{key}: Unexpected value. expected={'value': 'value-572651', 'updated_at': 1773857191.50268}, actual=value-998477
+1                  GET GET /api/tree/{key}: Unexpected value. expected=None, actual=value-186329
+1                  GET GET /api/tree/{key}: Unexpected value. expected={'value': 'value-839871', 'updated_at': 1773857195.469004}, actual=value-532188
+1                  GET GET /api/tree/{key}: Unexpected value. expected=None, actual=value-388209
+1                  GET GET /api/tree/{key}: Unexpected value. expected={'value': 'value-836093', 'updated_at': 1773857196.508686}, actual=value-917428
+1                  GET GET /api/tree/{key}: Unexpected value. expected=None, actual=value-468127
+1                  GET GET /api/tree/{key}: Unexpected value. expected={'value': 'value-676528', 'updated_at': 1773857202.458508}, actual=value-889419
+1                  GET GET /api/tree/{key}: Unexpected value. expected={'value': 'value-562358', 'updated_at': 1773857205.47044}, actual=value-369971
+1                  GET GET /api/tree/{key}: Unexpected value. expected=None, actual=value-188118
+1                  GET GET /api/tree/{key}: Unexpected value. expected={'value': 'value-132742', 'updated_at': 1773857203.489897}, actual=value-6733
+1                  GET GET /api/tree/{key}: Unexpected value. expected={'value': 'value-844324', 'updated_at': 1773857188.477958}, actual=value-236059
+1                  GET GET /api/tree/{key}: Unexpected value. expected=None, actual=value-926031
+1                  GET GET /api/tree/{key}: Unexpected value. expected={'value': 'value-913107', 'updated_at': 1773857203.4540942}, actual=value-581648
+1                  GET GET /api/tree/{key}: Unexpected value. expected={'value': 'value-969900', 'updated_at': 1773857212.4652858}, actual=value-614990
+1                  GET GET /api/tree/{key}: Unexpected value. expected={'value': 'value-682550', 'updated_at': 1773857212.4620001}, actual=value-948800
+1                  GET GET /api/tree/{key}: Unexpected value. expected={'value': 'value-438724', 'updated_at': 1773857211.46475}, actual=value-387099
+1                  GET GET /api/tree/{key}: Unexpected value. expected=None, actual=value-190241
+1                  GET GET /api/tree/{key}: Unexpected value. expected={'value': 'value-394360', 'updated_at': 1773857209.456615}, actual=value-206743
+1                  GET GET /api/tree/{key}: Unexpected value. expected=None, actual=value-710780
+1                  GET GET /api/tree/{key}: Unexpected value. expected={'value': 'value-462807', 'updated_at': 1773857218.446038}, actual=value-522303
+1                  GET GET /api/tree/{key}: Unexpected value. expected=None, actual=value-999859
+1                  GET GET /api/tree/{key}: Unexpected value. expected=None, actual=value-615269
+1                  GET GET /api/tree/{key}: Unexpected value. expected={'value': 'value-658114', 'updated_at': 1773857224.4917362}, actual=value-809525
+1                  GET GET /api/tree/{key}: Unexpected value. expected={'value': 'value-308319', 'updated_at': 1773857226.468056}, actual=value-868699
+1                  GET GET /api/tree/{key}: Unexpected value. expected={'value': 'value-717807', 'updated_at': 1773857230.45593}, actual=value-221533
+1                  GET GET /api/tree/{key}: Unexpected value. expected={'value': 'value-353129', 'updated_at': 1773857231.469952}, actual=value-755082
+1                  GET GET /api/tree/{key}: Unexpected value. expected={'value': 'value-458897', 'updated_at': 1773857222.469611}, actual=value-864586
+1                  GET GET /api/tree/{key}: Unexpected value. expected={'value': 'value-130997', 'updated_at': 1773857235.4506721}, actual=value-759828
+1                  GET GET /api/tree/{key}: Unexpected value. expected={'value': 'value-834086', 'updated_at': 1773857239.44634}, actual=value-991746
+1                  GET GET /api/tree/{key}: Unexpected value. expected={'value': 'value-241245', 'updated_at': 1773857240.465238}, actual=value-815210
+1                  GET GET /api/tree/{key}: Unexpected value. expected={'value': 'value-554334', 'updated_at': 1773857238.466785}, actual=value-291017
+1                  GET GET /api/tree/{key}: Unexpected value. expected={'value': 'value-869521', 'updated_at': 1773857238.471661}, actual=value-667592
+1                  GET GET /api/tree/{key}: Unexpected value. expected=None, actual=value-884828
+4                  GET GET /api/tree/{key}: Unexpected value. expected={'value': 'value-377009', 'updated_at': 1773857247.466004}, actual=value-398914
+1                  GET GET /api/tree/{key}: Unexpected value. expected={'value': 'value-363214', 'updated_at': 1773857245.4431272}, actual=value-864850
+1                  GET GET /api/tree/{key}: Unexpected value. expected=None, actual=value-713861
+1                  GET GET /api/tree/{key}: Unexpected value. expected={'value': 'value-887269', 'updated_at': 1773857249.442958}, actual=value-352702
+1                  GET GET /api/tree/{key}: Unexpected value. expected=None, actual=value-721608
+1                  GET GET /api/tree/{key}: Unexpected value. expected={'value': 'value-296962', 'updated_at': 1773857250.4359019}, actual=value-747852
+1                  GET GET /api/tree/{key}: Unexpected value. expected={'value': 'value-566321', 'updated_at': 1773857250.4541938}, actual=value-389656
+1                  GET GET /api/tree/{key}: Unexpected value. expected={'value': 'value-539774', 'updated_at': 1773857257.4547179}, actual=value-456263
+1                  GET GET /api/tree/{key}: Unexpected value. expected={'value': 'value-977877', 'updated_at': 1773857259.4432619}, actual=value-378513
+1                  GET GET /api/tree/{key}: Unexpected value. expected={'value': 'value-54159', 'updated_at': 1773857260.491255}, actual=value-660498
+1                  GET GET /api/tree/{key}: Unexpected value. expected={'value': 'value-104237', 'updated_at': 1773857253.460193}, actual=value-453617
+1                  GET GET /api/tree/{key}: Unexpected value. expected={'value': 'value-122195', 'updated_at': 1773857258.455038}, actual=value-331022
+1                  GET GET /api/tree/{key}: Unexpected value. expected=None, actual=value-288303
+1                  GET GET /api/tree/{key}: Unexpected value. expected=None, actual=value-451217
+1                  GET GET /api/tree/{key}: Unexpected value. expected={'value': 'value-184975', 'updated_at': 1773857264.4678478}, actual=value-792873
+1                  GET GET /api/tree/{key}: Unexpected value. expected={'value': 'value-770452', 'updated_at': 1773857265.494433}, actual=value-187190
+1                  GET GET /api/tree/{key}: Unexpected value. expected={'value': 'value-737155', 'updated_at': 1773857257.4470432}, actual=value-854985
+1                  GET GET /api/tree/{key}: Unexpected value. expected=None, actual=value-490375
+1                  GET GET /api/tree/{key}: Unexpected value. expected=None, actual=value-129360
+------------------|---------------------------------------------------------------------------------------------------------------------------------------------
+

@@ -1,0 +1,11 @@
+global:
+  scrape_interval: 150ms
+
+scrape_configs:
+  - job_name: 'btree'
+    metrics_path: /actuator/prometheus
+    static_configs:
+      - targets:
+          - host.docker.internal:8090
+          - host.docker.internal:8091
+          - host.docker.internal:8092

@@ -1,0 +1,39 @@
+spring:
+  application:
+    name: distributed-b-tree
+
+server:
+  port: ${HTTP_PORT:8080}
+
+btree:
+  degree: ${TREE_DEGREE:3}
+
+replication:
+  mode: ${REPLICATION_MODE:MASTER}
+  node-id: ${NODE_ID:node1}
+  master:
+    replica-mode: ${REPLICA_MODE:MASTER}
+    replicas:
+      - http://host.docker.internal:8081
+      - http://host.docker.internal:8082
+  crdt:
+    peers:
+      node1: http://host.docker.internal:8080
+      node2: http://host.docker.internal:8081
+      node3: http://host.docker.internal:8082
+  outbox-capacity: 10000
+  inbox-capacity: 10000
+  deduplication-window: 100000
+  connect-timeout: 2s
+  read-timeout: 5s
+  ack-timeout: 10s
+
+management:
+  server.port: 8090
+  endpoints:
+    web:
+      exposure:
+        include: health,prometheus,info,metrics
+  endpoint:
+    health:
+      show-details: always
