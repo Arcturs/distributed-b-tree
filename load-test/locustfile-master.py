@@ -35,7 +35,7 @@ class BTreeUser(HttpUser):
     wait_time = constant_pacing(1.0)
     host = MASTER_URL
 
-    @task(25)
+    @task(30)
     def insert(self):
         key = random_key()
         value = random_value()
@@ -111,7 +111,7 @@ class BTreeUser(HttpUser):
                 stats["read_checks_failed"] += 1
                 response.failure(f"Unexpected status: {response.status_code}")
 
-    @task(25)
+    @task(20)
     def exists(self):
         key = random_key()
         base_url = pick_read_base_url()

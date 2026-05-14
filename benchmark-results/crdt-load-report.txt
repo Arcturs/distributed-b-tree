@@ -1,19 +1,27 @@
-[2026-03-18 21:22:44,793] MacBook-Pro-Anastasia/INFO/locust.main: Shutting down (exit code 0)
+=== CRDT custom summary ===
+stale_or_pending_reads: 629
+conflict_reads: 274
+conflict_keys: 119
+read_checks_failed: 0
+write_checks_failed: 0
+tracked_expected_keys: 300
+===========================
+
 Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
 --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
-DELETE   DELETE /api/crdt/tree/{key}                                                     3460     0(0.00%) |     21       2      89     21 |   29.05        0.00
-GET      GET /api/crdt/tree/{key}                                                        8052     0(0.00%) |     18       1      70     19 |   67.61        0.00
-GET      GET /api/crdt/tree/{key}/exists                                                 4742     0(0.00%) |     18       1      67     18 |   39.81        0.00
-POST     POST /api/crdt/tree/insert                                                      6846     0(0.00%) |     21       2      96     21 |   57.48        0.00
+DELETE   DELETE /api/crdt/tree/{key}                                                     3391     0(0.00%) |     29       3     122     29 |   28.48        0.00
+GET      GET /api/crdt/tree/{key}                                                        8012     0(0.00%) |     26       2     120     27 |   67.28        0.00
+GET      GET /api/crdt/tree/{key}/exists                                                 4623     0(0.00%) |     26       2     102     27 |   38.82        0.00
+POST     POST /api/crdt/tree/insert                                                      7074     0(0.00%) |     29       3     240     29 |   59.40        0.00
 --------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
-         Aggregated                                                                     23100     0(0.00%) |     19       1      96     20 |  193.95        0.00
+         Aggregated                                                                     23100     0(0.00%) |     27       2     240     28 |  193.98        0.00
 
 Response time percentiles (approximated)
 Type     Name                                                                                  50%    66%    75%    80%    90%    95%    98%    99%  99.9% 99.99%   100% # reqs
 --------|--------------------------------------------------------------------------------|--------|------|------|------|------|------|------|------|------|------|------|------
-DELETE   DELETE /api/crdt/tree/{key}                                                            21     25     28     29     35     40     49     57     79     89     89   3460
-GET      GET /api/crdt/tree/{key}                                                               19     23     26     27     32     37     44     50     62     71     71   8052
-GET      GET /api/crdt/tree/{key}/exists                                                        18     23     25     27     32     36     43     50     59     67     67   4742
-POST     POST /api/crdt/tree/insert                                                             21     25     28     30     36     41     50     59     85     96     96   6846
+DELETE   DELETE /api/crdt/tree/{key}                                                            29     33     35     36     40     45     60     66    110    120    120   3391
+GET      GET /api/crdt/tree/{key}                                                               27     30     33     34     38     44     58     65    100    120    120   8012
+GET      GET /api/crdt/tree/{key}/exists                                                        27     31     33     34     38     43     57     63     93    100    100   4623
+POST     POST /api/crdt/tree/insert                                                             29     33     35     37     41     47     61     67    170    240    240   7074
 --------|--------------------------------------------------------------------------------|--------|------|------|------|------|------|------|------|------|------|------|------
-         Aggregated                                                                             20     24     27     28     34     39     47     54     73     95     96  23100
+         Aggregated                                                                             28     32     34     35     40     45     59     65    100    170    240  23100

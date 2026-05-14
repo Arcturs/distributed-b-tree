@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module version="4">
+  <component name="AdditionalModuleElements">
+    <content url="file://$MODULE_DIR$/../.." dumb="true">
+      <excludeFolder url="file://$MODULE_DIR$/../../load-test/.venv/bin" />
+      <excludeFolder url="file://$MODULE_DIR$/../../load-test/.venv/include" />
+      <excludeFolder url="file://$MODULE_DIR$/../../load-test/.venv/lib" />
+    </content>
+  </component>
+</module>

@@ -122,7 +122,7 @@ public class MasterReplicationMetrics {
         var durationNanos = Math.max(0L, System.nanoTime() - replication.startedAtNanos);
         Timer.builder("btree.replication.e2e.latency")
                 .description("Time from master accepting a write to completion on all replicas")
-                .tags("operation", operationId, "result", result)
+                .tags("operation", replication.operation, "result", result)
                 .publishPercentileHistogram()
                 .serviceLevelObjectives(
                         Duration.ofMillis(10),

@@ -32,7 +32,6 @@ public class ReplicaReplicationMetrics {
         sample.stop(Timer.builder("btree.replica.apply.latency")
                 .description("Time to apply a single replicated operation to the local B-Tree")
                 .tags("operation", operation, "result", success ? "success" : "failed")
-                .tag("operation", operation)
                 .publishPercentileHistogram()
                 .serviceLevelObjectives(
                         Duration.ofMillis(1),

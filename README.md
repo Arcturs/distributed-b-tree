@@ -116,3 +116,25 @@ source .venv/bin/activate
 pip install -r requirements.txt
 locust -f locustfile-crdt-conflict.py --headless -u 80 -r 15 --run-time 2m
 ```
+
+```mermaid
+flowchart LR
+    OP[Создание CRDT-операции] --> ACT[Actor]
+    ACT --> CHECK{Зависимости готовы?}
+
+    CHECK -- Да --> APPLY[Apply]
+    APPLY --> CRDT[CRDT / MV-register]
+    CRDT --> VIEW[B-tree view]
+    APPLY --> OUT[Outbox → другие реплики]
+
+    CHECK -- Нет --> PEND[Pending]
+    PEND --> CHECK
+
+    classDef main fill:#EAF2FF,stroke:#3B82F6,stroke-width:2px,color:#111827;
+    classDef decision fill:#FFF7E6,stroke:#F59E0B,stroke-width:2px,color:#111827;
+    classDef wait fill:#FDECEC,stroke:#EF4444,stroke-width:2px,color:#111827;
+
+    class OP,ACT,APPLY,CRDT,VIEW,OUT main;
+    class CHECK decision;
+    class PEND wait;
+```

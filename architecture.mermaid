@@ -1,0 +1,25 @@
+flowchart LR
+OP[Создание CRDT-операции] --> ACT[Actor]
+ACT --> TYPE{Тип операции}
+
+TYPE -- Локальная --> APPLY[Apply]
+APPLY --> CRDT[CRDT / MV-register]
+CRDT --> VIEW[B-tree view]
+APPLY --> OUT[Outbox → другие реплики]
+
+TYPE -- Удаленная --> CHECK{Зависимости готовы?}
+CHECK -- Да --> APPLY1[Apply]
+APPLY1 --> CRDT1[CRDT / MV-register]
+CRDT1 --> VIEW1[B-tree view]
+APPLY1 --> ACK[Ack → реплика-источник]
+
+CHECK -- Нет --> PEND[Pending]
+PEND --> CHECK
+
+classDef main fill:#EAF2FF,stroke:#3B82F6,stroke-width:2px,color:#111827;
+classDef decision fill:#FFF7E6,stroke:#F59E0B,stroke-width:2px,color:#111827;
+classDef wait fill:#FDECEC,stroke:#EF4444,stroke-width:2px,color:#111827;
+
+class OP,ACT,APPLY,APPLY1,CRDT,CRDT1,VIEW,VIEW1,OUT,ACK main;
+class CHECK,TYPE decision;
+class PEND wait;
